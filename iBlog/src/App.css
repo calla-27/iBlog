@@ -1,0 +1,22 @@
+/* 全局背景与字体 */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 主容器 */
+.home-container {
+  display: flex;
+  max-width: 1400px; /* 加宽最大宽度 */
+  width: 100%;
+  margin: 30px auto; /* 增加上下边距 */
+  gap: 30px; /* 加大栏间距 */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
