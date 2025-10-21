@@ -1,0 +1,384 @@
+/* Header.css */
+.header {
+  background-color: white;
+  color: var(--text-dark);
+  padding: 12px 30px;
+  position: sticky;
+  top: 0;                    /* 完全贴合顶部 */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between; /* 左右对齐 */
+  align-items: center; /* 垂直居中 */
+  border-radius: 0;    /* 移除圆角，贴合顶部 */
+  margin: 0;           /* 移除外边距 */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px; /* 导航链接间距 */
+}
+
+.nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* 右侧用户区域 */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* 增大元素间距，为消息按钮预留空间 */
+}
+
+/* 通用按钮样式 */
+.header-btn {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.header-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* 注册按钮（高亮） */
+.header-btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+.header-btn-primary:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* 已登录：用户头像 */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* 圆形头像 */
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.user-avatar:hover {
+  border-color: #3b82f6;
+}
+
+/* 退出按钮 */
+.header-btn-logout {
+  color: #ef4444;
+  border-color: #fecdd3;
+}
+.header-btn-logout:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* 已登录用户菜单区域 */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 增大头像、消息、退出按钮之间的间距 */
+}
+
+/* 消息按钮样式 */
+.message-btn {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.message-btn:hover {
+  color: var(--primary);
+}
+
+/* 消息提示徽章 */
+.message-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* 退出按钮调整 */
+.header-btn-logout {
+  color: #ef4444;
+  border-color: #fecdd3;
+  padding: 8px 16px; /* 保持按钮大小 */
+}
+
+/* 头像样式微调 */
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-avatar:hover {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+    
+/* ===== CodePen 风格顶部栏卡片 ===== */
+.header {
+  border-radius: 0;          /* 移除圆角 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;                    /* 完全贴合顶部 */
+  z-index: 1000;
+  background: #ffffff;      /* 纯白背景 */
+  padding: 12px 24px;       /* 稍小内边距，更紧凑 */
+  margin: 0;                /* 移除外边距 */
+}
+
+/* Logo 加图标 */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #1890ff;           /* 统一蓝色 */
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.logo i {
+  font-size: 1.3em;
+}
+
+/* 导航链接加图标 */
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a i {
+  font-size: 0.9em;
+  width: 16px;
+  text-align: center;
+}
+
+.nav a:hover {
+  background: #f0f8ff;
+  color: #1890ff;
+}
+
+/* 按钮加图标 */
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-btn i {
+  font-size: 0.9em;
+  width: 16px;
+  text-align: center;
+}
+
+.header-btn-logout i {
+  margin-right: 4px;
+}
+
+/* 消息按钮图标 */
+.message-btn i {
+  font-size: 1.1em;
+}
+
+/* 头像圆角 + 悬动效 */
+.user-avatar {
+  transition: all 0.2s;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+  border-color: #1890ff;
+}
+
+/* 追加：侧边栏开关按钮 */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #1890ff;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+.sidebar-toggle:hover {
+  transform: scale(1.1);
+  background: #f0f8ff;
+}
+
+/* 左侧区域布局 */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 搜索框容器 */
+.search-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 40px;
+}
+
+.search-form {
+  display: flex;
+  gap: 88px; /* 将原有8px增大到16px，按钮会向右移动8px */
+  align-items: center;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1890ff;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.search-clear:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.search-btn {
+  padding: 10px 16px;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background: #096dd9;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .search-container {
+    max-width: 300px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    max-width: 200px;
+    margin: 0 10px;
+  }
+  
+  .search-btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}

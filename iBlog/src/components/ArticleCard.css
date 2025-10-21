@@ -1,0 +1,226 @@
+.article-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px; /* 增加间隙 */
+  margin-bottom: 25px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+  transition: transform .2s, box-shadow .2s;
+  border: none;
+  position: relative;
+}
+
+/*======== 左侧内容区：自动扩展 ========*/
+.article-card-left {
+  flex: 1;
+  min-width: 0;
+  padding-right: 20px; /* 增加右侧内边距 */
+}
+
+/*======== 右侧封面区：大幅增加尺寸 ========*/
+.article-card-right {
+  width: 200px; /* 大幅增加宽度 */
+  height: 200px; /* 相应增加高度，保持比例 */
+  flex: none;
+  border-radius: 12px; /* 增加圆角 */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,.1); /* 增强阴影 */
+  position: relative;
+  margin-left: auto;
+}
+
+/* 图片基础样式 */
+.article-card-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease; /* 添加缩放过渡 */
+}
+
+/* 加载中的图片 */
+.article-card-right img.loading {
+  opacity: 0;
+}
+
+/* 加载完成的图片 */
+.article-card-right img.loaded {
+  opacity: 1;
+}
+
+/* 悬停时图片放大效果 */
+.article-card:hover .article-card-right img.loaded {
+  transform: scale(1.05);
+}
+
+/* 加载占位符 */
+.article-card-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 12px;
+}
+
+.article-card-right img.loading + ::before {
+  opacity: 1;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.article-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.article-card h2 a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.article-card h2 a:hover {
+  color: var(--primary);
+}
+
+.article-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 增加显示行数 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 元信息区域 */
+.article-card .meta {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 统计信息样式 */
+.article-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 增加统计项间距 */
+  margin: 12px 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 6px;
+}
+
+.stat-icon {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.stat-number {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* 标签区域 */
+.tags {
+  margin-top: 15px;
+}
+
+.tag {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 4px 12px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.tag:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .article-card-right {
+    width: 250px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  
+  .article-card-right {
+    width: 100%;
+    height: 250px;
+    margin-left: 0;
+  }
+  
+  .article-card-left {
+    padding-right: 0;
+  }
+  
+  .article-stats {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-card {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .article-card-right {
+    height: 200px;
+  }
+  
+  .article-stats {
+    gap: 10px;
+  }
+  
+  .stat-item {
+    padding: 3px 6px;
+  }
+}
