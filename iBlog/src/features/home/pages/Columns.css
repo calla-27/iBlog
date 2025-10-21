@@ -1,0 +1,41 @@
+/* Columns.css */
+.columns-container {
+  padding: 20px;
+  max-width: 840px;      /* 与文章卡片同宽 */
+  margin: 0 auto;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.category-tab {
+  padding: 6px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-tab.active {
+  background: #1890ff;
+  color: #fff;
+  border-color: #1890ff;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

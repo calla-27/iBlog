@@ -1,0 +1,482 @@
+/* src/features/myblog/styles/myblog-publish.module.css */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.publishContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: -10px;
+}
+
+.pageTitle {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.draftNotice {
+  font-size: 14px;
+  color: #6c757d;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+/* 表单样式 */
+.publishForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 一行两个表单项 */
+.formRow {
+  display: flex;
+  gap: 20px;
+}
+
+.formGroupHalf {
+  flex: 1;
+}
+
+.formLabel {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.required {
+  color: #dc3545;
+}
+
+.formInput,
+.formSelect {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 错误状态 */
+.inputError {
+  border-color: #dc3545;
+}
+
+.errorTip {
+  font-size: 12px;
+  color: #dc3545;
+}
+
+/* 新增：成功提示样式 */
+.successTip {
+  font-size: 12px;
+  color: #28a745;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.successTip::before {
+  content: "✓";
+  font-weight: bold;
+}
+
+.successMsg {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #c3e6cb;
+}
+
+.errorMsg {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #f5c6cb;
+}
+
+/* 提示文本 */
+.tipText {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+/* 封面图上传区域样式 */
+.coverPreviewArea {
+  border: 2px dashed #e1e5e9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: #fafbfc;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.coverPreviewArea:hover {
+  border-color: #0d6efd;
+  background: #f8f9fa;
+}
+
+.coverPreviewWithActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.coverPreviewImage {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+.coverActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coverActionBtn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.coverActionBtn:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.coverActionBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.removeBtn {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.removeBtn:hover:not(:disabled) {
+  background: #dc3545;
+  color: white;
+}
+
+.coverStatus {
+  font-size: 0.85rem;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f8f9fa;
+}
+
+.coverUploadPlaceholder {
+  cursor: pointer;
+  padding: 40px 20px;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.coverUploadPlaceholder:hover {
+  color: #0d6efd;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.uploadIcon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.uploadText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.uploadTip {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.uploadingTip {
+  color: #0d6efd;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px;
+  background: #e3f2fd;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* 编辑器样式 */
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.previewBtn {
+  padding: 6px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.previewBtn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.editorContainer {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px; /* 确保有上边距 */
+}
+
+/* 提交按钮组 */
+.submitGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.cancelBtn:hover {
+  background-color: #e9ecef;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.draftBtn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.draftBtn:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.draftBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.publishBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.publishBtn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.publishBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.validationTips {
+  flex: 1;
+  min-width: 200px;
+  margin-left: 20px;
+}
+
+.validationTip {
+  color: #fd7e14;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.draftTip {
+  color: #28a745;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .publishContainer {
+    padding: 20px;
+  }
+
+  .editorContainer {
+    height: 400px;
+  }
+
+  .submitGroup {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .actionButtons {
+    order: 1;
+    justify-content: center;
+  }
+
+  .cancelBtn {
+    order: 2;
+  }
+
+  .validationTips {
+    order: 3;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .coverActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .coverActionBtn {
+    width: 100%;
+  }
+}
+
+/* 额外的小屏幕优化 */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  .publishContainer {
+    padding: 15px;
+    margin-top: 0;
+  }
+
+  .pageTitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .formInput,
+  .formSelect {
+    padding: 8px 10px;
+  }
+
+  .cancelBtn,
+  .draftBtn,
+  .publishBtn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .coverPreviewArea {
+    padding: 15px;
+  }
+
+  .coverUploadPlaceholder {
+    padding: 30px 15px;
+  }
+
+  .uploadIcon {
+    font-size: 2.5rem;
+  }
+
+  .uploadText {
+    font-size: 1rem;
+  }
+}
+
+/* 超大屏幕优化 */
+@media (min-width: 1400px) {
+  .wrapper {
+    max-width: 1400px;
+  }
+  
+  .publishContainer {
+    padding: 40px;
+  }
+}

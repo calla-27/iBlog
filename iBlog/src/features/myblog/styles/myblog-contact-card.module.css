@@ -1,0 +1,41 @@
+/* src/features/myblog/styles/myblog-contact-card.module.css */
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.contactList a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactList a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

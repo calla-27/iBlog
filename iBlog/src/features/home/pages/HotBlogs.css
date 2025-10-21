@@ -1,0 +1,11 @@
+/* HotBlogs.css 中添加 */
+.article-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* 保留你原有的其他样式 */
+.hot-blogs          { padding: 24px; max-width: 960px; margin: 0 auto; }
+.hot-title          { margin-bottom: 20px; font-size: 22px; font-weight: 600; }
+.hot-empty,
+.hot-loading        { text-align: center; color: #999; padding: 40px 0; }

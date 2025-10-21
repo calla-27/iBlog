@@ -1,0 +1,278 @@
+/* src/features/myblog/styles/myblog-home.module.css */
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profileArea {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e9ecef;
+}
+
+.profileInfo {
+  flex: 1; /* 占据剩余空间 */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.username {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.statsAndActions {
+  display: flex;
+  flex-wrap: wrap; /* 适配小屏幕 */
+  align-items: center;
+  gap: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.actionBtn {
+  padding: 5px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.actionBtn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.expandableAreas {
+  width: 100%;
+}
+
+.expandedContent {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 展开动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.expandedContent h3 {
+  margin-top: 0;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.expandedContent p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #444;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.contactList li {
+  line-height: 1.6;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.contactList a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contactList a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between; /* 改为两端对齐，让发布按钮靠右 */
+  align-items: center; /* 垂直居中 */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 发布按钮样式 */
+.publishBtn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* 确保按钮靠右（兼容旧布局） */
+}
+
+.publishBtn:hover {
+  background-color: #0056b3;
+}
+
+.navBtn {
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.navBtn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.navBtn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.date {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.card {
+  background: #fff;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btnRead {
+  margin-top: 8px;
+  padding: 6px 18px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnRead:hover {
+  background-color: #0056b3;
+}
+
+.loadMore {
+  margin: 20px auto;
+  display: block;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loadMore:hover {
+  background-color: #0056b3;
+}
+
+.loadMore:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+
+.articles {
+  padding: 2rem 0;
+}
+
+/*继续编辑按钮*/
+.btnEdit {
+  margin-top: 8px;
+  margin-left: 10px;
+  padding: 6px 18px;
+  font-size: 14px;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnEdit:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+  .profileArea {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .statsAndActions {
+    justify-content: center;
+  }
+}
