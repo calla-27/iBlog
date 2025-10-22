@@ -48,10 +48,46 @@ iBlog 是一个功能完整的博客创作与分享平台，采用前后端分�
 ```bash
 git clone https://github.com/your-username/iBlog.git
 cd iBlog
+```
 
-### 2.下载依赖
+### 2.MySQL配置
+```sql
+CREATE DATABASE iblog CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+### 3.后端配置
 ```bash
+# 创建 .env 文件
+DB_HOST=localhost
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_NAME=iblog
+JWT_SECRET=your_jwt_secret
+PORT=3000
+
+# 安装依赖
 npm install
+
+# 安装其他插件
+npm install jsonwebtoken bcryptjs
+npm install express@4.18.2
+
+# 启动后端
+npm start
+```
+
+### 4.前端配置
+```bash
+# 安装依赖
+npm install
+
+# 安装其他插件
+#edit编辑器
+npm install @wangeditor/editor @wangeditor/editor-for-react
+
+# 启动前端
+npm run dev
+```
 
 ## 🏗️ 技术架构
 
@@ -125,3 +161,73 @@ iblog_api/
 ├── .env # 环境变量
 ├── app.js # 应用入口
 └── package.json
+
+# 🔌 API接口文档
+
+## 👤 用户认证
+
+- `POST /api/user/register` - 用户注册
+- `POST /api/user/login` - 用户登录
+- `GET /api/user/me` - 获取当前用户资料
+- `GET /api/user/:id` - 获取指定用户资料
+- `PUT /api/user/:id/avatar` - 更新用户头像
+- `PUT /api/user/:id/profile` - 更新用户资料
+
+## 📝 文章管理
+
+- `GET /api/articles` - 获取文章列表（博客广场）
+- `GET /api/articles/:id` - 获取文章详情
+- `POST /api/articles` - 创建新文章
+- `PUT /api/articles/:id` - 更新文章
+- `DELETE /api/articles/:id` - 删除文章
+- `GET /api/users/:userId/articles` - 获取用户文章列表
+- `GET /api/articles/my/articles` - 获取我的文章
+- `GET /api/articles/my/drafts` - 获取我的草稿列表
+
+## 🔍 文章发现
+
+- `GET /api/articles/search` - 搜索文章
+- `GET /api/articles/featured` - 获取推荐文章
+- `GET /api/articles/hot` - 获取热门文章
+- `GET /api/articles/hot-tags` - 获取热门标签
+
+## 💬 评论管理
+
+- `GET /api/articles/:articleId/comments` - 获取文章评论
+- `POST /api/articles/:articleId/comments` - 发表评论
+- `POST /api/comments/:commentId/like` - 点赞评论
+
+## ❤️ 互动功能
+
+- `POST /api/articles/:id/like` - 点赞/取消点赞文章
+- `POST /api/articles/:id/collect` - 收藏/取消收藏文章
+
+## 📁 文件上传
+
+- `POST /api/upload/cover` - 上传文章封面图
+
+## 🛠️ 调试接口
+
+- `GET /api/debug/articles` - 文章调试接口
+- `GET /api/debug/users` - 用户调试接口
+- `GET /api/debug/auth-test` - 认证测试接口
+- `GET /api/simple/articles` - 简单文章列表
+  
+### 🚧功能展望
+
+## 👥 社交关系
+- 用户关注系统：实现用户间的【关注/粉丝】功能，构建社交网络
+- 私信聊天：支持用户间实时消息交流，增强互动性
+- 用户推荐：基于兴趣标签智能推荐志同道合的博主
+
+## 🎯 个性化体验
+- 智能内容推荐：通过机器学习分析用户阅读偏好，推送个性化博客内容
+- 阅读习惯分析：统计用户阅读时长、点赞收藏行为，生成个人阅读报告
+- 自定义主题：支持深色模式、字体大小调整等个性化设置
+
+## 📧 订阅与通知
+- 博客订阅服务：允许用户订阅心仪博主，及时接收更新推送
+- 邮件通知系统：重要动态通过邮件提醒，包括新粉丝、评论回复等
+- 消息中心：整合所有互动通知，提供统一的消息管理界面
+
+- 期待通过这些功能的不断完善，为每位用户打造更贴心、更智能的博客创作与阅读体验！ ✨
