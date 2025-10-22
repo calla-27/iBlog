@@ -137,8 +137,10 @@ iBlog/
 ├── package.json
 ├── vite.config.js          # Vite 配置
 └── eslint.config.js        # 代码规范
+```
 
 ### 后端项目结构
+```text
 iblog_api/
 ├── config/
 │   └── db.js               # 数据库配置
@@ -161,6 +163,7 @@ iblog_api/
 ├── .env                    # 环境变量
 ├── app.js                  # 应用入口
 └── package.json
+```
 
 # 🔌 API接口文档
 
